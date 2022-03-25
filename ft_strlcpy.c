@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckala <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 17:04:26 by ckala             #+#    #+#             */
+/*   Updated: 2022/03/25 17:00:56 by ckala            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+
+	if (dstsize == 0)
+	{
+		return (ft_strlen(src));
+	}
+	i = 0;
+	while (src[i] && i < dstsize - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (i < dstsize)
+	{
+		dst[i] = '\0';
+	}
+	i = 0;
+	while (src[i])
+	{
+		i++;
+	}
+	return (i);
+}
